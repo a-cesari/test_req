@@ -6,7 +6,11 @@ headers = {
     "Accept-Encoding": "gzip, deflate, br",
     "Accept-Language": "en-US,en;q=0.5",
 }
+http_proxy = "http://0.0.0.0.0:0000"
+proxies = {
+    "http": http_proxy,
+}
 for url in ['https://w3schools.com','https://www.google.it','https://it.bidoo.com/auction.php?a=Protein_Muesli_Cioccolato_30453593']:
-  x = requests.get(url,verify=False,headers=headers)
+  x = requests.get(url,verify=False,headers=headers,proxies=proxies)
   st.write(f"{url}: {x.status_code}")
 
